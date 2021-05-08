@@ -18,6 +18,9 @@ def printSafe(dataframe, name, explanation, getter):
     else:
         print('There is no {} column in dataframe.'.format(name))
 
+def inputLower(title):
+    return input('{}: '.format(title)).lower()
+
 
 def get_filters():
     """
@@ -30,24 +33,24 @@ def get_filters():
     """
     print('Hello! Let\'s explore some US bikeshare data!')
     # TO DO: get user input for city (chicago, new york city, washington).
-    city = input("Enter city name: ").lower()
+    city = inputLower("Enter city name")
     while city not in city_names:
         print('This city data does not exist.Please choose one of these: {}'.format(city_names))
-        city = input("Enter city name: ").lower()
+        city = inputLower("Enter city name")
 
     # TO DO: get user input for month (all, january, february, ... , june)
-    month = input("Enter month: ").lower()
+    month = inputLower("Enter month")
     # "all" is valid input so we don't have to control that from the list.
     while month not in month_names and month != 'all':
         print('This month data does not exist.Please choose one of these: {}'.format(month_names))
-        month = input("Enter month: ").lower()
+        month = inputLower("Enter month")
 
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
-    day = input("Enter day of week: ").lower()
+    day = inputLower("Enter day of week")
     # "all" is valid input so we don't have to control that from the list.
     while day not in weekday_names and day != 'all':
         print('This day data does not exist.Please choose one of these: {}'.format(weekday_names))
-        day = input("Enter day of week: ").lower()
+        day = inputLower("Enter day of week")
 
     print('-' * 40)
     return city, month, day
