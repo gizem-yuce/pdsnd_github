@@ -10,7 +10,7 @@ month_names = [ 'january', 'february', 'march', 'april', 'may', 'june' ]
 weekday_names = [ 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday' ]
 
 
-# created function to check existance of related column (I added after the review.)
+# function to check existance of related column
 def printSafe(dataframe, name, explanation, getter):
     if name in dataframe:
         value = getter(dataframe[ name ])
